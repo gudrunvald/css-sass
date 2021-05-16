@@ -1,0 +1,49 @@
+@keyframes moveInLeft {
+    /* State at start of the animation */
+    /* Invisible and 100 px to the left */
+    0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+  
+    /* State at 80% of the animation */
+    /* Moves a little to the left just before it finds it proper place */
+    80% {
+      transform: translateX(1rem);
+    }
+  
+    /* State at the end of the animation */
+    /* Visible and at the "original" place */
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+  
+    80% {
+      transform: translateX(-1rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }

@@ -1,35 +1,3 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-html {
-  /* Setting the font size here in the root
-    for all rem values to relate to 
-    10px fr easy multiplication.
-    This makes the css more reponsive to different viewport sizes,
-    media queries and requires us to only change one value 
-    if we want to increase or decrease the sizes on the page. 
-    Rem units are font-size based 
-    so that's why we set the font size here */
-  /* font-size: 10px; */
-  font-size: 62.5%;
-  /* We want a 10px font size but to let users set their 
-    own browser font size we set this to a % and not px.
-    10/16 (16px is the browsers default) = 62.5% */ }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
-  /* Because font-size in html is 10 -> 10px * 3rem = 30px */
-  padding: 3rem;
-  box-sizing: border-box; }
-
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -55,28 +23,59 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* To fix some shakiness in css animation */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* Name and duration of animation declared below */
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    /* Shorthand for the animation as above */
-    animation: moveInRight 1s ease-out; }
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: #fab;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* This defines what 1rem really is.
+  Setting the font size here in the root
+    for all rem values to relate to 
+    10px fr easy multiplication.
+    This makes the css more reponsive to different viewport sizes,
+    media queries and requires us to only change one value 
+    if we want to increase or decrease the sizes on the page. 
+    Rem units are font-size based 
+    so that's why we set the font size here */
+  /* font-size: 10px; */
+  font-size: 62.5%;
+  /* We want a 10px font size but to let users set their 
+    own browser font size we set this to a % and not px.
+    10/16 (16px is the browsers default) = 62.5% */ }
+
+body {
+  box-sizing: border-box; }
 
 @keyframes moveInLeft {
   /* State at start of the animation */
@@ -111,6 +110,38 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* To fix some shakiness in css animation */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* Name and duration of animation declared below */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* Shorthand for the animation as above */
+    animation: moveInRight 1s ease-out; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  /* Because font-size in html is 10 -> 10px * 3rem = 30px */
+  padding: 3rem; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
