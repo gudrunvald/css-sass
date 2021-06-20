@@ -13,6 +13,7 @@
   
     /* Clips the bottom of the header image */
     /* Top left corner, top right corner, bottom right corner, botton left corner */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   
     // .header gets copied by the & so this is essentially .header__logo-box
