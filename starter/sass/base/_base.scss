@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* This defines what 1rem really is.
+  Setting the font size here in the root
+    for all rem values to relate to 
+    10px fr easy multiplication.
+    This makes the css more reponsive to different viewport sizes,
+    media queries and requires us to only change one value 
+    if we want to increase or decrease the sizes on the page. 
+    Rem units are font-size based 
+    so that's why we set the font size here */
+
+  /* font-size: 10px; */
+  font-size: 62.5%;
+
+  /* We want a 10px font size but to let users set their 
+    own browser font size we set this to a % and not px.
+    10/16 (16px is the browsers default) = 62.5% */
+}
+
+body {
+  box-sizing: border-box;
+}

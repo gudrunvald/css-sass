@@ -1,0 +1,27 @@
+// To compile scss -> [Gudrun:~/Desktop/css-sass/starter]$ compile:sass or npm run compile:sass
+// as compile:sass is the script declared in package.json 
+
+// Install live-server globally so page reloads on change ->
+// [Gudrun:~/Desktop/css-sass/starter]$ npm install live-server -g
+// To run live-server ->
+// [Gudrun:~/Desktop/css-sass/starter]$ live-server
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "layout/header";
+@import "layout/grid";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "pages/home";
+
+@import "components/button";
+@import "components/card";
+@import "components/composition";
+@import "components/feature-box";
+
